@@ -44,6 +44,10 @@ body{
     width: 550px;
     margin-left: 20px;
 }
+.todo_icon{
+    width: 30px;
+    height: 28px;
+}
 h3{
     margin-left: 25px;
     display: inline;
