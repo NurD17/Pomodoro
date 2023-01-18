@@ -17,20 +17,36 @@
         <hr class="first">
         <h3>TODO</h3>
         <hr class="second">
-        <input list="list" placeholder="Category">
-        <datalist id="list">
-          <option value="Personal">Plans to carry out alone</option>
-          <option value="Work">Plans for doing work</option>
-        </datalist>
-
-        <input list="list2" placeholder="Short description" class="des">
-        <datalist id="list2"></datalist>
-        <br>
-
+            <div class="taskAdder">
+                <input list="list" placeholder="Category" class="category">
+                <datalist id="list">
+                    <option value="Personal">Plans to carry out alone</option>
+                    <option value="Work">Plans for doing work</option>
+                </datalist>
         
+                <input type="text" list="list2" placeholder="Short description" class="description">
+                <datalist id="list2"></datalist>
+                <button class="add">&#43;</button>
+                <div class="text">
+                    <hr>
+                </div>
+            </div>
+        <br>
         <h2><img src="/icons/agenda.png" alt="justicon" class="todo_icon">TODO list is empty</h2>
         <h4>Try to add some tasks use the form above</h4>
         <hr class="lastline">
     </div>
+    <script>
+        const input = document.querySelector('.description');
+        const text = document.querySelector('.text');
+        const btn = document.querySelector('button');
+
+        function innerText(){
+        btn.addEventListener('click', ()  =>{
+            text.innerHTML += input.value;
+        })
+        }
+        innerText();
+    </script>
 </body>
 </html>

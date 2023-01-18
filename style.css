@@ -4,6 +4,9 @@ body{
 .main{
     height: 400px;
 }
+.taskAdder{
+    padding: 40px 100px;
+}
 .head{
     display: inline-block;
     background-color: rgb(208,70,67);
@@ -39,6 +42,11 @@ body{
     margin-left: 70px;
     width: 530px;
 }
+h3{
+    margin-left: 25px;
+    display: inline;
+    text-align: center;
+}
 .second{
     display: inline-block;
     width: 550px;
@@ -48,21 +56,32 @@ body{
     width: 30px;
     height: 28px;
 }
-h3{
-    margin-left: 25px;
-    display: inline;
-    text-align: center;
+.category{
+    width: auto;
+    height: 30px;
 }
-input {
-    margin-left: 70px;
-    width: 150px;
-    height: 25px;
+.description{
+    width: 900px;
+    height: 30px;
 }
-.des{
-    margin-left: 0;
-    width: 1030px;
-    height: 25px;
+.add{
+    width: 35px;
+    height: 36px;
+    background-color:white;
+    border: 1px solid #767676;
+    border-radius: 2px;
 }
+.add:hover{
+    background-color: rgba(76,76,76,0.3);
+    transition-duration: 0.5s; 
+    /* transition: 2s; */
+}
+.text{
+    height: 50px;
+    width: auto;
+    background-color:aqua;
+}
+
 h2{
     font-family: 'Quicksand', sans-serif;
     color:rgb(72,138,196);
@@ -73,5 +92,6 @@ h4{
     text-align: center;
 }
 .lastline{
+    display: flex;
     width: 1200px;
 }
