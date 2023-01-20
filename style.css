@@ -4,9 +4,6 @@ body{
 .main{
     height: 400px;
 }
-.taskAdder{
-    padding: 40px 100px;
-}
 .head{
     display: inline-block;
     background-color: rgb(208,70,67);
@@ -31,12 +28,14 @@ body{
     height: 40px;
     width: 250px;
 }
+/* Start and Stop button in the main container --------------------------------- */
 .start{
     margin-left:300px;
 }
 .stop{
     margin-left: 70px;
 }
+/* ----------------------------Two lines --------------------------------------- */
 .first{
     display: inline-block;
     margin-left: 70px;
@@ -52,36 +51,81 @@ h3{
     width: 550px;
     margin-left: 20px;
 }
+/* To Do list with icon -------------------------------------------------------- */
 .todo_icon{
     width: 30px;
     height: 28px;
 }
+/*Its a container for adder =====================================================================*/
+#add-task-container{
+    margin: 20px 70px;
+    width: auto;
+    padding: 20px 10px;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 0 1.5px;
+    display: flex;
+}
+/* input buttons for description  ===============================================================*/
 .category{
-    width: auto;
+    flex: 2;
     height: 30px;
-}
-.description{
-    width: 900px;
-    height: 30px;
-}
-.add{
-    width: 35px;
-    height: 36px;
-    background-color:white;
     border: 1px solid #767676;
+    margin-right:3px;
     border-radius: 2px;
+    font-size: 15px;
+    padding: 5px;
 }
-.add:hover{
-    background-color: rgba(76,76,76,0.3);
-    transition-duration: 0.5s; 
-    /* transition: 2s; */
+#input-task{
+    flex: 10;
+    border: 1px solid #767676;
+    margin-right:3px;
+    border-radius: 2px;
+    font-size: 15px;
+    padding: 5px;
 }
-.text{
-    height: 50px;
-    width: auto;
-    background-color:aqua;
+/* Adder button to add plan (work) to list ==================================================== */
+#add-task{
+    flex: 0.3;
+    font-size: 10px;
+    padding: 5px;
+    background-color: white;
+    border: 1px solid #767676;
+    border-radius: 1.5px;
+}
+#add-task:hover{
+    background-color: rgba(76,76,76,0.1);
+    transition: 0.3s;
 }
 
+/* Style of text which added after clicking ==================================================*/
+.task{
+    font-family: 'Quicksand', sans-serif;
+    width: auto;
+    height: 30px;
+    margin: 0 70px;
+    background-color:white;
+    border-radius:2px;
+    box-shadow: 0 0 1.5px;
+    padding: 5px;
+    margin-top: 8px;
+    justify-content: space-between;
+    display: flex;
+}
+.task li{
+    list-style: none;
+    flex: 5;
+    font-size: 15px;
+    padding: 5px;
+    margin: 0 210px;
+}
+.task button{
+    flex:0.1;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: wheat;
+    margin-right: 5px;
+}
 h2{
     font-family: 'Quicksand', sans-serif;
     color:rgb(72,138,196);

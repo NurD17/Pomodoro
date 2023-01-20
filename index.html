@@ -12,25 +12,26 @@
         <div class="head">
             <h1 class="size">25:00</h1>
             <button class="btn start">START</button>
-            <button class="btn stop">START</button>
+            <button class="btn stop">STOP</button>
         </div>
         <hr class="first">
         <h3>TODO</h3>
         <hr class="second">
-            <div class="taskAdder">
-                <input list="list" placeholder="Category" class="category">
-                <datalist id="list">
-                    <option value="Personal">Plans to carry out alone</option>
-                    <option value="Work">Plans for doing work</option>
-                </datalist>
+        <br>
+        <div id="add-task-container">
+            <input list="list" placeholder="Category" class="category" id="added">
+                    <datalist id="list">
+                        <option value="Personal">Plans to carry out alone</option>
+                        <option value="Work">Plans for doing work</option>
+                    </datalist>
+            <input type="text" placeholder="Enter Task" id="input-task">
+            <button id="add-task">&#43;</button>
+        </div>
         
-                <input type="text" list="list2" placeholder="Short description" class="description">
-                <datalist id="list2"></datalist>
-                <button class="add">&#43;</button>
-                <div class="text">
-                    <hr>
-                </div>
-            </div>
+        <div id="task-container">
+        </div>   
+        
+        <script src="/sctipt.js"></script>
         <br>
         <h2><img src="/icons/agenda.png" alt="justicon" class="todo_icon">TODO list is empty</h2>
         <h4>Try to add some tasks use the form above</h4>
