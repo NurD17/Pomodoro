@@ -97,6 +97,7 @@ h3{
     background-color: rgba(76,76,76,0.1);
     transition: 0.3s;
 }
+/* Button to delete =========================================================================== */
 
 /* Style of text which added after clicking ==================================================*/
 .task{
@@ -138,4 +139,7 @@ h4{
 .lastline{
     display: flex;
     width: 1200px;
+}
+#selected-answer{
+    text-align: center;
 }

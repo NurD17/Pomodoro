@@ -1,24 +1,32 @@
 const addTask = document.getElementById('add-task');
 const taskContainer = document.getElementById('task-container');
 const inputTask = document.getElementById('input-task');
-// const classCategory = document.getElementById('added')
+const selectedCategory = document.getElementById('added');
 
-// Event listener for add button ------------------------------------------------> 
 addTask.addEventListener('click', function(){
+    while (inputTask.value === "") {
+        alert("Please enter a task !");
+    }
     let task = document.createElement('div');
     task.classList.add('task');
+
+    let category = document.createElement('p');
+    category.innerText = selectedCategory.value;
+    task.appendChild(category);
 
     let li = document.createElement('li');
     li.innerText= `${inputTask.value}`;
     task.appendChild(li);
 
-    // let catG = document.createElement('li');
-    // catG.innerText = `${classCategory.value}`;
-    // task.appendChild(li)
+    // Create a delete button
+    let deleteBtn = document.createElement('button');
+    deleteBtn.innerText = "Delete";
+    deleteBtn.classList.add("delete-btn");
+    task.appendChild(deleteBtn);
 
-    if(inputTask.value === ""){
-        alert("Please enter a task !")
-    } else {
-        taskContainer.appendChild(task);
-    }
+    // Add event listener to delete button
+    deleteBtn.addEventListener('click', function(){
+        task.remove();
+    });
+    taskContainer.appendChild(task);
 });
