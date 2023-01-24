@@ -29,4 +29,5 @@ addTask.addEventListener('click', function(){
         task.remove();
     });
     taskContainer.appendChild(task);
+    
 });
