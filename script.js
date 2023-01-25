@@ -28,7 +28,7 @@ const inputTask = document.getElementById('input-task');
 const selectedCategory = document.getElementById('added');
 
 addTask.addEventListener('click', function(){
-    while (inputTask.value === "") {
+    if(inputTask.value === "") {
         alert("Please enter a task !");
     }
     let task = document.createElement('div');
