@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <h1 class="size">25:00</h1>
+        <div class="head">
+            <button class="btn start">START</button>
+            <button class="btn stop">STOP</button>
+        </div>
+        <hr class="first">
+        <h3>TODO</h3>
+        <hr class="second">
+        <br>
+        <div id="add-task-container">
+            <input list="list" placeholder="Category" class="category" id="added">
+                    <datalist id="list">
+                        <option value="Personal">Plans to carry out alone</option>
+                        <option value="Work">Plans for doing work</option>
+                    </datalist>
+                    <p id="selected-answer"></p>
+            <input type="text" placeholder="Enter Task" id="input-task">
+            <button id="add-task">&#43;</button>
+        </div>
+        
+        <div id="task-container">
+        </div>   
+        <br>
+        <h2><img src="/icons/agenda.png" alt="justicon" class="todo_icon">TODO list is empty</h2>
+        <h4>Try to add some tasks use the form above</h4>
+        <hr class="lastline">
+    </div>
+    <script src="/script.js"></script>
+</body>
+</html>
