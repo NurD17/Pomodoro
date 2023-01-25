@@ -1,75 +1,92 @@
-body{
-    height: 50em;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+/* ================================================================ */
+/*     Header   */
+/* ================================================================ */
+*{
+    font-family: 'Roboto Mono', monospace;
 }
 .main{
-    height: 400px;
+    width: 100%;
+    height: 100%;
 }
-.head{
-    display: inline-block;
-    background-color: rgb(208,70,67);
-    height: 250px;
-    width: 1200px;
-    margin: 50px 70px;
-    border-radius: 8px;
+body{
+    background-color: white;
 }
-.size{
-    font-family: 'Quicksand', sans-serif;
-    font-size: 90px;
-    margin-left: 470px;
-    margin-top: 15px;
-    font-weight: lighter;
-    color: white;
-}
-.btn{
-    color: white;
-    background-color:rgb(208,70,67);
-    border: 1px solid;
-    border-radius: 3px;
-    height: 40px;
-    width: 250px;
-}
-/* Start and Stop button in the main container --------------------------------- */
-.start{
-    margin-left:300px;
-}
-.stop{
-    margin-left: 70px;
-}
-/* ----------------------------Two lines --------------------------------------- */
-.first{
-    display: inline-block;
-    margin-left: 70px;
-    width: 530px;
-}
-h3{
-    margin-left: 25px;
-    display: inline;
+.headPart{
+    width: 85%;
+    height: 300px;
+    margin: 0 auto;
     text-align: center;
 }
-.second{
+.timerPart{
+    margin: 50px;
+    width: 90%;
+    height: 220px;
     display: inline-block;
-    width: 550px;
-    margin-left: 20px;
+    background-color: rgba(169,68,66,0.99);
+    border: 1px solid white;
+    border-radius: 5px;
 }
-/* To Do list with icon -------------------------------------------------------- */
-.todo_icon{
-    width: 30px;
-    height: 28px;
+.timerGo{
+    font-size:80px;
+    padding: 20px;
+    color: white;
 }
-/*Its a container for adder =====================================================================*/
+/* ================================================================ */
+/* Button to start and stop timer */
+/* ================================================================ */
+.style{
+    font-size: 20px; 
+    border: 1px solid white;
+    padding: 5px 80px;
+    background:transparent;
+    color:white;
+    border-radius: 3px;
+}
+.startButton{
+    margin-right: 15px;
+}
+.stopButton {
+    margin-left: 15px;
+}
+/* =========================================== */
+/*  Just Lines  */
+/* =========================================== */
+.forLines{
+    width: 80%;
+    padding: 0 0 0 135px;
+    text-align: center;
+    color:white;
+}
+hr{
+    width: 95%;
+    justify-content: center;
+    border: 0.50px solid rgba(169,68,66,0.99);
+    border-radius:2px
+}
+h3{
+    background-color:rgba(169,68,66,0.99);
+    margin: 0 24px 0 24px;
+    padding: 5px 0 5px 0px;
+    border-radius: 2px;
+    box-shadow: 0 0 1.5px;
+}
+/* ============================================= */
+/* Category and input Description  */
+/* ============================================= */
 #add-task-container{
-    margin: 20px 70px;
+    margin: 20px 160px;
     width: auto;
-    padding: 20px 10px;
+    padding: 10px 10px;
     background-color: white;
     border-radius: 3px;
     box-shadow: 0 0 1.5px;
     display: flex;
 }
-/* input buttons for description  ===============================================================*/
+/* input buttons for description  =====================*/
 .category{
     flex: 2;
-    height: 30px;
+    height: 25px;
     border: 1px solid #767676;
     margin-right:3px;
     border-radius: 2px;
@@ -84,7 +101,7 @@ h3{
     font-size: 15px;
     padding: 5px;
 }
-/* Adder button to add plan (work) to list ==================================================== */
+/* Adder button to add plan (work) to list =========== */
 #add-task{
     flex: 0.3;
     font-size: 10px;
@@ -97,49 +114,38 @@ h3{
     background-color: rgba(76,76,76,0.1);
     transition: 0.3s;
 }
-/* Button to delete =========================================================================== */
-
+/* =========================================================================================== */
 /* Style of text which added after clicking ==================================================*/
+/* =========================================================================================== */
 .task{
-    font-family: 'Quicksand', sans-serif;
     width: auto;
-    height: 30px;
-    margin: 0 70px;
+    height: 50px;
+    margin: 0 160px;
     background-color:white;
-    border-radius:2px;
+    border-radius: 2px;
     box-shadow: 0 0 1.5px;
-    padding: 5px;
-    margin-top: 8px;
+    padding: 0 0 0 50px;
+    margin-top: 10px;
     justify-content: space-between;
+    align-items: center;
     display: flex;
 }
 .task li{
     list-style: none;
-    flex: 5;
     font-size: 15px;
-    padding: 5px;
-    margin: 0 210px;
+    padding: 10px;
+    margin-left: -430px;
+    margin: 0 10px;
+    text-align: center;
 }
+
+/* Button to delete =========================================================================== */
 .task button{
-    flex:0.1;
     border: 1px solid;
-    border-radius: 5px;
-    background-color: wheat;
-    margin-right: 5px;
+    border-radius: 3px;
+    background-color: white;
+    margin-right: 10px;
 }
-h2{
-    font-family: 'Quicksand', sans-serif;
-    color:rgb(72,138,196);
-    text-align: center;
-}
-h4{
-    font-family: 'Quicksand', sans-serif;
-    text-align: center;
-}
-.lastline{
-    display: flex;
-    width: 1200px;
-}
-#selected-answer{
-    text-align: center;
-}
+/* #selected-answer{
+    text-align: end;
+} */
