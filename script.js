@@ -1,26 +1,75 @@
-// let countdown;
+let countdown;
 
-// document.getElementById("start-timer-btn").addEventListener("click", function() {
-//   let seconds = 0;
-//   let minutes = 25;
+let isStarted = false;
+let minutes = 25;
+let seconds = 0;
 
-//   countdown = setInterval(function() {
-//     seconds--;
-//     if (seconds < 0) {
-//       seconds = 59;
-//       minutes--;
-//     }
-//     if(minutes < 0) {
-//         clearInterval(countdown);
-//         alert("Time's up!");
-//     }
-//     document.getElementById("timer").innerHTML = (minutes > 9 ? minutes : "0" + minutes) + ":" + (seconds > 9 ? seconds : "0" + seconds);
-//   }, 1000);
-// });
+let done = true;
+let timeToRest = 5;
+let secondsOfRest = 0;
 
-// document.getElementById("stop-timer-btn").addEventListener("click", function() {
-//   clearInterval(countdown);
-// });
+function startTimer() {
+  document.getElementById("start-timer-btn").innerHTML = "PAUSE";
+  isStarted = true;
+  countdown = setInterval(function() {
+    seconds--;
+    if (seconds < 0) {
+      seconds = 59;
+      minutes--;
+    }
+    if (minutes < 0) {
+      clearInterval(countdown);
+      alert("Time's up!");
+    }
+    document.getElementById("timer").innerHTML = (minutes > 9 ? minutes : "0" + minutes) + ":" + (seconds > 9 ? seconds : "0" + seconds);
+  }, 1000);
+}
+
+document.getElementById("start-timer-btn").addEventListener("click", function() {
+  if (isStarted) {
+    clearInterval(countdown);
+    document.getElementById("start-timer-btn").innerHTML = "CONTINUE";
+    isStarted = false;
+    document.getElementById("stop-timer-btn").innerHTML = "DONE"
+  } else {
+    startTimer();
+  }
+});
+
+document.getElementById("stop-timer-btn").addEventListener("click", function(){
+  if(done){
+      countdown = setInterval(function() {
+      seconds--;
+      if (seconds < 0) {
+        seconds = 59;
+        timeToRest--;
+      }
+      if (timeToRest < 0) {
+        clearInterval(countdown);
+        alert("Time's up!");
+      }
+      document.getElementById("timer").innerHTML = (timeToRest > 9 ? timeToRest : "0" + timeToRest) + ":" + (seconds > 9 ? seconds : "0" + seconds);
+    }, 1000);
+  }
+  }
+)
+
+
+document.getElementById("stop-timer-btn").addEventListener("click", function() {
+  clearInterval(countdown);
+  document.getElementById("start-timer-btn").innerHTML = "START";
+  isStarted = false;
+});
+
+document.getElementById("continue-timer-btn").addEventListener("click", function() {
+  if (!isStarted) {
+    startTimer();
+  }
+});
+
+
+
+
 
 const addTask = document.getElementById('add-task');
 const taskContainer = document.getElementById('task-container');

@@ -12,7 +12,7 @@
 body{
     background-color: white;
 }
-.headPart{
+.head-part{
     width: 85%;
     height: 300px;
     margin: 0 auto;
@@ -45,6 +45,7 @@ body{
 }
 .startButton{
     margin-right: 15px;
+
 }
 .stopButton {
     margin-left: 15px;
