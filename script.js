@@ -48,7 +48,7 @@ document.getElementById("stop-timer-btn").addEventListener("click", function(){
         clearInterval(countdown);
         alert("Time's up!");
       }
-      document.getElementById("timer").innerHTML = (timeToRest > 9 ? timeToRest : "0" + timeToRest) + ":" + (seconds > 9 ? seconds : "0" + seconds);
+      document.getElementById("timer").innerHTML = (timeToRest > 9 ? minutes : "0" + minutes) + ":" + (seconds > 9 ? seconds : "0" + seconds);
     }, 1000);
   }
   }
