@@ -1,41 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-/* ================================================================ */
-/*     Header   */
-/* ================================================================ */
-*{
-    font-family: 'Roboto Mono', monospace;
-}
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+/* ==================================== Header Part ==================================*/
 .main{
+    margin-top: 5%;
     width: 100%;
     height: 100%;
-}
-body{
-    background-color: white;
-}
-.head-part{
-    width: 85%;
-    height: 300px;
-    margin: 0 auto;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .timer-part{
-    margin: 50px;
-    width: 90%;
-    height: 220px;
-    display: inline-block;
+    font-family: 'Quicksand', sans-serif; 
+    width:80%;
+    height: 35vh;
+    display: flex;
     background-color: rgba(169,68,66,0.99);
     border: 1px solid white;
     border-radius: 5px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
 }
 .timer-go{
-    font-size:80px;
-    padding: 20px;
+    font-size:500%;
     color: white;
+    font-weight: 500;
 }
 /* ================================================================ */
-/* Button to start and stop timer */
+/* =================== Button to start and stop timer ============= */
 /* ================================================================ */
 .style{
+    font-family: 'Quicksand', sans-serif; 
     font-size: 20px; 
     border: 1px solid white;
     padding: 5px 80px;
@@ -43,75 +37,80 @@ body{
     color:white;
     border-radius: 3px;
 }
-.startButton{
+.start-button{
     margin-right: 15px;
+    letter-spacing: 0.1em;
 
 }
-.stopButton {
+.stop-button {
     margin-left: 15px;
+    letter-spacing: 0.1em;
 }
 /* =========================================== */
-/*  Just Lines  */
+/* ============= Just Lines  ===================*/
 /* =========================================== */
-.forLines{
-    width: 80%;
-    padding: 0 0 0 135px;
-    text-align: center;
-    color:white;
-}
-hr{
-    width: 95%;
+.for-lines{
+    width:80%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
     justify-content: center;
+}
+.for-lines hr{
+    width: 100%;
     border: 0.50px solid rgba(169,68,66,0.99);
     border-radius:2px
 }
-h3{
+.for-lines h3{
+    font-family: 'Quicksand', sans-serif; 
+    color:white;
+    width: 100%;
+    text-align: center;
     background-color:rgba(169,68,66,0.99);
     margin: 0 24px 0 24px;
     padding: 5px 0 5px 0px;
     border-radius: 2px;
     box-shadow: 0 0 1.5px;
 }
-/* ============================================= */
-/* Category and input Description  */
-/* ============================================= */
-#add-task-container{
-    margin: 20px 160px;
-    width: auto;
-    padding: 10px 10px;
+/* ================================== Category and input Description =================================== */
+.add-task{
+    margin-top: 1%;
+    width:80%;
+    height: 10vh;
     background-color: white;
     border-radius: 3px;
     box-shadow: 0 0 1.5px;
     display: flex;
+    align-items:center;
 }
 /* input buttons for description  =====================*/
 .category{
-    flex: 2;
-    height: 25px;
+    width: 15%;
+    height: 50%;
     border: 1px solid #767676;
-    margin-right:3px;
+    margin:0 1% 0 2%;
     border-radius: 2px;
     font-size: 15px;
-    padding: 5px;
 }
-#input-task{
-    flex: 10;
+.input-description{
+    height: 50%;
+    width: 75%;
     border: 1px solid #767676;
-    margin-right:3px;
+    margin: 0 1% 0 0;
     border-radius: 2px;
     font-size: 15px;
-    padding: 5px;
 }
 /* Adder button to add plan (work) to list =========== */
-#add-task{
-    flex: 0.3;
-    font-size: 10px;
-    padding: 5px;
+.for-adding-task{
+    height: 55%;
+    width: 3%;
+    font-size: 15px;
     background-color: white;
+    font-weight: 500;
     border: 1px solid #767676;
     border-radius: 1.5px;
 }
-#add-task:hover{
+.for-adding-task:hover{
     background-color: rgba(76,76,76,0.1);
     transition: 0.3s;
 }
@@ -119,23 +118,20 @@ h3{
 /* Style of text which added after clicking ==================================================*/
 /* =========================================================================================== */
 .task{
-    width: auto;
+    width: 100%;
     height: 50px;
-    margin: 0 160px;
     background-color:white;
     border-radius: 2px;
     box-shadow: 0 0 1.5px;
-    padding: 0 0 0 50px;
     margin-top: 10px;
-    justify-content: space-between;
-    align-items: center;
     display: flex;
+    justify-content: space-between;
 }
 .task li{
     list-style: none;
     font-size: 15px;
     padding: 10px;
-    margin-left: -430px;
+
     margin: 0 10px;
     text-align: center;
 }
@@ -147,6 +143,3 @@ h3{
     background-color: white;
     margin-right: 10px;
 }
-/* #selected-answer{
-    text-align: end;
-} */

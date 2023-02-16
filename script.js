@@ -1,85 +1,98 @@
-let countdown;
-
-let isStarted = false;
-let minutes = 25;
-let seconds = 0;
-
-let done = true;
-let timeToRest = 5;
-let secondsOfRest = 0;
+let isStarted = isPaused = done = false;
+let minutes = 25,
+    seconds = 0,
+    countdown;
 
 function startTimer() {
-  document.getElementById("start-timer-btn").innerHTML = "PAUSE";
   isStarted = true;
   countdown = setInterval(function() {
-    seconds--;
-    if (seconds < 0) {
-      seconds = 59;
-      minutes--;
+    if (!isPaused) {
+      seconds--;
+      if (seconds < 0) { 
+        seconds = 59;
+        minutes--;
+      }
+      if (minutes < 0) {
+        clearInterval(countdown);
+        alert("Time's up!");
+        if (!done) {
+          done = true;
+          minutes = 5;
+          seconds = 0;
+          let elem = document.getElementsByClassName('timer-part');
+          for(let i = 0; i < elem.length; i++){
+            elem[i].style.backgroundColor = 'green';
+          }
+          startTimer();
+        } else {
+          done = false;
+          minutes = 25;
+          seconds = 0;
+          document.getElementById("timer").innerHTML = "25:00";
+          document.getElementById("start-timer-btn").innerHTML = "START";
+          document.getElementById("stop-timer-btn").innerHTML = "STOP";
+        }
+      } else {
+        document.getElementById("timer").innerHTML = (minutes > 9 ? minutes : "0" + minutes) + ":" + (seconds > 9 ? seconds : "0" + seconds);
+      }
     }
-    if (minutes < 0) {
-      clearInterval(countdown);
-      alert("Time's up!");
-    }
-    document.getElementById("timer").innerHTML = (minutes > 9 ? minutes : "0" + minutes) + ":" + (seconds > 9 ? seconds : "0" + seconds);
   }, 1000);
+  document.getElementById('start-timer-btn').innerHTML = 'PAUSE';
+}
+
+function pauseTimer() {
+  isPaused = true;
+  document.getElementById("start-timer-btn").innerHTML = "CONTI";
+  document.getElementById("stop-timer-btn").innerHTML = "DONE";
+}
+
+function continueTimer() {
+  isPaused = false;
+  document.getElementById("start-timer-btn").innerHTML = "PAUSE";
+  document.getElementById('stop-timer-btn').innerHTML = "STOP";
+}
+
+function doneTimer() {
+  done = true;
+  minutes = 5;
+  seconds = 0;
+  let elem = document.getElementsByClassName('timer-part');
+  for(let i = 0; i < elem.length; i++){
+    elem[i].style.backgroundColor = 'green';
+  }
+  startTimer();
+}
+
+function stopTimer() {
+  clearInterval(countdown);
+  isStarted = isPaused = done = false;
+  minutes = 25;
+  seconds = 0;
+  document.getElementById("timer").innerHTML = "25:00";
+  document.getElementById("start-timer-btn").innerHTML = "START";
+  document.getElementById("stop-timer-btn").innerHTML = "STOP";
+  doneTimer();
 }
 
 document.getElementById("start-timer-btn").addEventListener("click", function() {
-  if (isStarted) {
-    clearInterval(countdown);
-    document.getElementById("start-timer-btn").innerHTML = "CONTINUE";
-    isStarted = false;
-    document.getElementById("stop-timer-btn").innerHTML = "DONE"
-  } else {
-    startTimer();
-  }
-});
-
-document.getElementById("stop-timer-btn").addEventListener("click", function(){
-  if(done){
-      countdown = setInterval(function() {
-      seconds--;
-      if (seconds < 0) {
-        seconds = 59;
-        timeToRest--;
-      }
-      if (timeToRest < 0) {
-        clearInterval(countdown);
-        alert("Time's up!");
-      }
-      document.getElementById("timer").innerHTML = (timeToRest > 9 ? minutes : "0" + minutes) + ":" + (seconds > 9 ? seconds : "0" + seconds);
-    }, 1000);
-  }
-  }
-)
-
-
-document.getElementById("stop-timer-btn").addEventListener("click", function() {
-  clearInterval(countdown);
-  document.getElementById("start-timer-btn").innerHTML = "START";
-  isStarted = false;
-});
-
-document.getElementById("continue-timer-btn").addEventListener("click", function() {
   if (!isStarted) {
     startTimer();
+  } else if (!isPaused) {
+    pauseTimer();
+  } else {
+    continueTimer();
   }
 });
 
-
-
-
-
+document.getElementById("stop-timer-btn").addEventListener("click", function() {
+  stopTimer();
+});
 const addTask = document.getElementById('add-task');
 const taskContainer = document.getElementById('task-container');
 const inputTask = document.getElementById('input-task');
 const selectedCategory = document.getElementById('added');
 
 addTask.addEventListener('click', function(){
-    if(inputTask.value === "") {
-        alert("Please enter a task !");
-    }
     let task = document.createElement('div');
     task.classList.add('task');
 
@@ -91,7 +104,7 @@ addTask.addEventListener('click', function(){
     li.innerText= `${inputTask.value}`;
     task.appendChild(li);
 
-    // Create a delete button
+    // Create a delete button ==============================================
     let deleteBtn = document.createElement('button');
     deleteBtn.innerText = "Delete";
     deleteBtn.classList.add("delete-btn");

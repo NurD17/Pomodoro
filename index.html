@@ -9,34 +9,30 @@
 </head>
 <body>
     <div class="main">
-        <div class="head-part">
-            <div class="timer-part">
-                <div id="timer" class="timer-go">25:00</div>
-                <div class="locationOfButtons">
-                    <button id="start-timer-btn" class="style startButton">START</button>
-                    <button id="stop-timer-btn" class="style stopButton">STOP</button>    
-                </div> 
-            </div>
+        <div class="timer-part">
+            <div id="timer" class="timer-go">25:00</div>
+            <div class="locationOfButtons">
+                <button id="start-timer-btn" class="style start-button">START</button>
+                <button id="stop-timer-btn" class="style stop-button">STOP</button>    
+            </div> 
         </div>
-        <div class="forLines">
-            <hr class="firstLine">
+        <div class="for-lines">
+            <hr>
             <h3>DOTO</h3>
-            <hr class="secondLine">
+            <hr>
         </div>
-
-        <div id="add-task-container">
+        <div class ="add-task"id="add-task-container">
             <input list="list" placeholder="Category" class="category" id="added">
                     <datalist id="list">
                         <option value="Personal">Plans to carry out alone</option>
                         <option value="Work">Plans for doing work</option>
                     </datalist>
                     <p id="selected-answer"></p>
-            <input type="text" placeholder="Enter Task" id="input-task">
-            <button id="add-task">&#43;</button>
+            <input type="text" placeholder="Enter Task" class="input-description" id="input-task">
+            <button class = "for-adding-task"id="add-task">&#43;</button>
         </div>
         <div id="task-container"></div> 
-        
     </div>
-    <script src="/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
